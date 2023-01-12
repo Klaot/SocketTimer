@@ -1,0 +1,28 @@
+.window {
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.windowHeader {
+    h3 {
+        color: rgba(175, 2, 2, 0.842);
+        background: rgb(252, 230, 230);
+        display: inline-block;
+        padding-inline: 10px;
+        margin-block: 10px;
+        border-radius: 3px;
+        font-size: 15px;
+    }
+}
+
+.windowHeaderAndButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+        margin-block: 10px 12px;
+        color: rgba(175, 2, 2, 0.808);
+        font-size: 27px;
+    }
+}

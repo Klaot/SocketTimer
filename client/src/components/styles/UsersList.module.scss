@@ -1,0 +1,22 @@
+.userListAll {
+    display: flex;
+    overflow: scroll;
+}
+
+.userListAllInfo {
+    width: 250px;
+    text-align: center;
+    h2 {
+        font-size: 18px;
+        margin-block: 25px;
+    }
+}
+
+.userList {
+    display: flex;
+}
+
+.userListNullTimer {
+    width: 250px;
+    height: 55px;
+}
