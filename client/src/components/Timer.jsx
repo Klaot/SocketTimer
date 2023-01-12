@@ -1,10 +1,11 @@
 import React from 'react'
 import { subscribeToTimer } from '../services/timer';
 import { useState, useEffect } from 'react';
+import styles from './styles/Timer.module.scss'
 
 function Timer({setRerender}) {
 
-    const [timeNumber, setTimeNumber] = useState('')
+    const [timeNumber, setTimeNumber] = useState(0)
 
     useEffect(() => {
     subscribeToTimer((err, timestamp) => setTimeNumber(timestamp));
@@ -16,8 +17,8 @@ function Timer({setRerender}) {
     seconds = seconds < 10 ? '0' + seconds : seconds
 
     return (
-        <div>
-            <div>
+        <div className={styles.timerBlock}>
+            <div className={styles.timer}>
                 <h1>Время: {minutes}:{seconds}</h1>
             </div>
         </div>

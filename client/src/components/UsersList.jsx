@@ -20,11 +20,14 @@ function UsersList() {
   useEffect(() => {
    let user = getJoinedUser()
    addNewUser(user)
+   
+   // Проверка таймера и перемещение его к следующему пользователю если он равен 0
    if(rerender === 0 ) {
     indexUserTimer === activeUsers.length - 1 ? setIndexUserTimer(0) : setIndexUserTimer(indexUserTimer + 1)
   }
   }, [rerender])
 
+  //Добавление подключенного юзера
   function addNewUser(user) {
     setActiveUsers([...users, user])
   }
@@ -34,7 +37,7 @@ function UsersList() {
         <div className={styles.userList}>
           <div className={styles.userListAllInfo}>
               <h2>Ход:</h2>
-              <div><h2 >Параметры и требования:</h2></div>
+              <h2 >Параметры и требования:</h2>
               <p>Наличие комплекса мероприятий, повышающих стандарты качества изготовления</p>
               <p>Срок изготовления лота в днях</p>
               <p>Гарантийные обязательства в месяцах</p>
@@ -43,10 +46,10 @@ function UsersList() {
           </div>
           {activeUsers.map((user, index) => {
             return (
-              <div key={index} className={styles.userListAllInfo}>
+              <div key={index} className={styles.userInfo}>
                 {indexUserTimer === index ? <Timer setRerender={setRerender}/> : <div className={styles.userListNullTimer}></div>}
                 <h3>Участник №{index + 1}</h3>
-                <p>{user.name}</p>
+                <h4>{user.name}</h4>
                 <p>{user.improvement}</p>
                 <p>{user.date}</p>
                 <p>{user.assurance}</p>
