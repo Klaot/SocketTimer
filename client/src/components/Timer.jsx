@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles/Timer.module.scss'
+import Clock from '../assets/clock.png'
 import { subscribeToTimer } from '../services/timer';
 import { useState, useEffect } from 'react';
 
@@ -20,6 +21,7 @@ function Timer({setRerender}) {
         <div className={styles.timerBlock}>
             <div className={styles.timer}>
                 <h1>Время: {minutes}:{seconds}</h1>
+                <img src={Clock} alt='Clock icon'/>
             </div>
         </div>
     )
