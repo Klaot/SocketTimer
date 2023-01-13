@@ -27,3 +27,13 @@
         font-size: 27px;
     }
 }
+
+.windowClose {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.windowClose:hover {
+    opacity: 0.7;
+}

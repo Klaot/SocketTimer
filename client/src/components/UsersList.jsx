@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './styles/UsersList.module.scss';
-import Timer from './Timer'
-import { useEffect } from 'react';
+import User from './User';
+import { useState, useEffect } from 'react';
 import { getJoinedUser } from '../services/timer';
-import { useState } from 'react';
+
 
 const users = [
   {id: 1, price: 2500, date: 15, assurance: 2, percent: 30, improvement: "-", timer: true, name: 'ООО ВЕКТОР'},
-  {id: 2, price: 2500, date: 10, assurance: 2, percent: 30, improvement: "-", timer: false, name: 'ООО Звонок'},
-  {id: 3, price: 2500, date: 20, assurance: 2, percent: 30, improvement: "-", timer: false, name: 'ООО МегоСталь'},
+  {id: 2, price: 3500, date: 10, assurance: 2, percent: 30, improvement: "-", timer: false, name: 'ООО Звонок'},
+  {id: 3, price: 1500, date: 20, assurance: 2, percent: 30, improvement: "-", timer: false, name: 'ООО Мего-Сталь'},
 ]
 
 function UsersList() {
@@ -27,7 +27,7 @@ function UsersList() {
   }
   }, [rerender])
 
-  //Добавление подключенного юзера
+  //Добавление подключенного пользователя
   function addNewUser(user) {
     setActiveUsers([...users, user])
   }
@@ -44,20 +44,15 @@ function UsersList() {
               <p>Условия оплаты</p>
               <p>Стоимость изготовления лота в руб.без НДС</p>
           </div>
-          {activeUsers.map((user, index) => {
-            return (
-              <div key={index} className={styles.userInfo}>
-                {indexUserTimer === index ? <Timer setRerender={setRerender}/> : <div className={styles.userListNullTimer}></div>}
-                <h3>Участник №{index + 1}</h3>
-                <h4>{user.name}</h4>
-                <p>{user.improvement}</p>
-                <p>{user.date}</p>
-                <p>{user.assurance}</p>
-                <p>{user.percent}%</p>
-                <p>{user.price}</p>
-              </div>
-            )
-          })}
+          {
+            activeUsers.map((user, index)=> {
+              return <User 
+              index={index} 
+              user={user} 
+              indexUserTimer={indexUserTimer} 
+              setRerender={setRerender}/>
+            })
+          }
         </div>
     </section>
   )

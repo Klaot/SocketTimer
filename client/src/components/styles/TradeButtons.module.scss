@@ -1,10 +1,54 @@
 .tradeButtonsAll {
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     padding-top: 20px;
     padding-bottom: 10px;
     button {
+        display: flex;
+        align-items: center;
         margin-left: 10px;
-        padding: 7px;
+        cursor: pointer;
+        img {
+            width: 20px;
+            margin-left: 3px;
+        }
+    }
+    button:hover {
+        opacity: 0.8;
     }
 }
+
+.chatButton {
+    background-color: rgba(19, 117, 19, 0.856);
+    color: #fff;
+    border: none;
+    padding: 7px;
+}
+
+.refreshButton {
+    color: #fff;
+    background-color: rgba(10, 64, 145, 0.884);
+    border: none;
+    padding: 7px;
+}
+
+.stopTradeButton {
+    color: #fff;
+    background-color: rgba(175, 2, 2, 0.842);
+    border: none;
+    padding: 7px;
+}
+.tradeReportButton {
+    border: 1px solid #B20505C4;
+    color: #B20505C4;
+    padding: 6px;
+}
+
+.tradeCloseWindowButton {
+    border: none;
+    padding: 7px;
+}
+

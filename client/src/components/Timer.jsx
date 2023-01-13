@@ -1,7 +1,7 @@
 import React from 'react'
+import styles from './styles/Timer.module.scss'
 import { subscribeToTimer } from '../services/timer';
 import { useState, useEffect } from 'react';
-import styles from './styles/Timer.module.scss'
 
 function Timer({setRerender}) {
 
